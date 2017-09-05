@@ -1,0 +1,96 @@
+<div id="index-banner" materialize class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center teal-text text-lighten-2">PlanoOn</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Crie seu plano de aula online em poucos cliques e envie por e-mail, imprima e edite quando quiser.</h5>
+            </div>
+            <div  [hidden]="ngIf()" class="row center nav-wrapper">
+                <a href="#formView" (click)="cadastro()" class="active btn">Cadastre-se agora</a>
+            </div>
+            
+            <br>
+            <br>
+
+        </div>
+    </div>
+    <div class="parallax" ng-reflect-materialize="parallax" materialize="parallax"><img src="./assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div materialize class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">av_timer</i></h2>
+                    <h5 class="center">Rapidez e eficiência</h5>
+
+                    <p class="light">O seu plano de aula feito em poucos minutos, com apenas alguns cliques, disponível para impressão, envio
+                        por e-mail e futuras edições.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">list</i></h2>
+                    <h5 class="center">Divisão por temas</h5>
+
+                    <p class="light">As aulas são divididas por tema, série e conteúdo de acordo com o Currículo Nacional definido pelo MEC.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                    <h5 class="center">Organização sistemática</h5>
+
+                    <p class="light">Organiza as aulas e otimiza o tempo do professor, criando planejamentos de acordo com a complexidade
+                        exigida pela turma.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">new_releases</i></h2>
+                    <h5 class="center">Atualização constante</h5>
+
+                    <p class="light">Equipe técnica altamente qualificada, com formação especifica nas diversas áreas, realizando atualizações
+                        diariamente em nossa base de conteúdo.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div materialize class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">Porque dar qualidade ao ensino e nos preocupar com a parte burocrática, enquanto os professores ganham mais tempo é a nossa missão.  </h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax" ng-reflect-materialize="parallax" materialize="parallax"><img src="./assets/img/background2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+<!--Formulario de contato-->
+<app-contato></app-contato>
+
+<!--Formulario de cadastro -->
+<app-cadastro></app-cadastro>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">Porque educar, tornar as pessoas e o mundo melhor é dever de todos nós, mas a PlanoOn, definitivamente, nasceu com esse dever.</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax" ng-reflect-materialize="parallax" materialize="parallax"><img src="./assets/img/background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
+<!-- END MAIN -->

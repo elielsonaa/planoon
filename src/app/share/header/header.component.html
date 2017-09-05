@@ -1,0 +1,74 @@
+<!-- NAVBAR TELA INICIAL-->
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#!" class="brand-logo responsive-img"><img src="./assets/img/logo.png" alt="PlanoOn"></a>
+
+            <!-- SIDENAV PARA DESKTOP-->
+            <ul class="right hide-on-med-and-down">
+                <!-- HOME -->
+                <li><a [routerLink]="['/']"><i class="material-icons left">home</i>home</a></li>
+                <!-- CONTATO -->
+                <li><a href="#formView" (click)="contato()" class="active"><i class="material-icons left">mail_outline</i>contato </a></li>
+                <!-- LOGIN -->
+                <li *ngIf="!this._loginService.isLogged()">
+                    <a materialize="modal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#login">
+                        <i class="material-icons left">lock</i>login
+                    </a>
+                </li>
+                <!-- PERFIL -->
+                <li *ngIf="this._loginService.isLogged()" class="collection-item avatar">
+                    <a materialize="modal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#perfil">
+                        <img src="{{this._loginService.getUser().urlPhoto}}" alt="Foto" class="circle responsive-img">
+                    </a>
+                </li>
+
+                <!--LOGOUT -->
+                <li *ngIf="this._loginService.isLogged()">
+                    <a (click)="logout($event)">
+                        <i class="material-icons left">exit_to_app</i>Sair
+                    </a>
+                </li>
+            </ul>
+            <!-- SIDENAV PARA MOBILE-->
+            <ul id="nav-mobile" class="side-nav">
+                <!-- HOME -->
+                <li><a [routerLink]="['/']"><i class="material-icons left">home</i>home</a></li>
+                <!-- CONTATO -->
+                <li><a href="#formView" (click)="contato()"><i class="material-icons left">mail_outline</i>contato</a></li>
+
+                <li *ngIf="!this._loginService.isLogged()">
+                    <a materialize="modal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#login">
+                        <i class="medium material-icons left">lock</i>login
+                    </a>
+                </li>
+                <!-- PERFIL -->
+                <li *ngIf="this._loginService.isLogged()" class="collection-item avatar">
+                    <a materialize="modal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#perfil">
+                        <img src="{{this._loginService.getUser().urlPhoto}}" alt="Foto" class="circle responsive-img">
+                    </a>
+                </li>
+
+                <!--LOGOUT -->
+                <li *ngIf="this._loginService.isLogged()">
+                    <a (click)="logout($event)">
+                        <i class="medium material-icons left">exit_to_app</i>Sair
+                    </a>
+                </li>
+
+            </ul>
+            <a href="#" data-activates="nav-mobile" materialize="sideNav" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+<!--NAVBAR TELA INICIAL-->
+
+<!-- MODAl TELA DE LOGIN -->
+<app-login></app-login>
+
+<!--MODAL TELA DE PERFIL-->
+<!--<perfilForm></perfilForm>-->
+
+<!--MODAL TELA PAINEL -> Mudar para substituir home só aparece se tiver logado-->
+<!--<painelForm></painelForm>--> 
+
+<!--EXIBIÇÂO DAS ROTAS-->
+<router-outlet></router-outlet>

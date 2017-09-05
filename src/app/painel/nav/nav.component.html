@@ -1,0 +1,94 @@
+  <!-- INICIO SIDE-NAV -->
+  <div id="side-nav">
+      <ul id="slide-out" class="side-nav fixed  teal">
+        <li>
+          <div materialize class="user-view  responsive-img" *ngIf="this._loginService.isLogged()"  style="background-image: url('../../assets/img/backside.jpg')">
+            <a href="#!this.user"><img class="circle responsive-img" src="../../assets/img/avatar.png" alt="Você"></a>
+            <!-- {{this._loginService.getUser().urlPhoto}} -->
+            <a href="#!this.name"><span class="white-text name">Eleilson de Andrade</span></a>
+            <!-- {{this._loginService.getUser().nomeCompleto}}  -->
+            <a href="#!this.email"><span class="white-text email">elielson@gd.com.br</span></a>
+            <!-- {{this._loginService.getUser().email}} -->
+            <!--  <br>Regra: <b> {{this._loginService.getUser().role}} </b>-->
+             
+          </div>
+        </li>
+
+         <li>
+          <ul materialize class="collapsible collapsible-accordion">
+          <li>
+            <a materialize class="collapsible-header">Escolas<i class="material-icons">store</i></a>
+            <div materialize class="collapsible-body teal">
+              <ul>
+                <li><a href="#!"><i class="material-icons Tiny">bookmark</i> Padre Fabiano</a></li>
+                <li><a href="#!"><i class="material-icons Tiny">bookmark</i> Maria Januaria</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        </li>
+
+       <li>
+          <div materialize class="divider"></div>
+        </li>
+
+        <ul materialize class="collapsible collapsible-accordion">
+          <li>
+            <a materialize class="collapsible-header">Conteúdos<i class="material-icons">library_books</i></a>
+            <div materialize class="collapsible-body teal">
+              <ul>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">reorder</i> Materias</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">list</i> Exercicios</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">playlist_add</i> Complemento</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <li>
+          <div materialize class="divider"></div>
+        </li>
+
+         <ul materialize class="collapsible collapsible-accordion">
+          <li>
+            <a materialize class="collapsible-header">Aulas<i class="material-icons">class</i></a>
+            <div materialize class="collapsible-body teal">
+              <ul>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">assignment_turned_in</i> 1º Bim</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">assignment_turned_in</i> 2º Bim</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">assignment_turned_in</i> 3º Bim</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">assignment_turned_in</i> 4º Bim</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons">add_box</i>Nova</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+         <li>
+          <div materialize class="divider"></div>
+        </li>
+
+         <ul materialize class="collapsible collapsible-accordion">
+          <li>
+            <a materialize class="collapsible-header">Calendário<i class="material-icons">event</i></a>
+            <div materialize class="collapsible-body teal">
+              <ul>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">insert_invitation</i> Evento 1</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">insert_invitation</i> Evento 2</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons Tiny">insert_invitation</i> Evento 3</a></li>
+                <li><a materialize class="waves-effect" href="#!"><i class="material-icons">add_alarm</i> Novo</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        
+        <li>
+          <div materialize class="divider"></div>
+        </li>
+        
+        <li><a materialize class="waves-effect" href="#!"><i class="material-icons">library_add</i> Mais</a></li>
+         <li>
+          <div materialize class="divider"></div>
+        </li>
+      </ul>
+    </div>

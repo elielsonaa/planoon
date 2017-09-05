@@ -1,0 +1,140 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ /** NAV BAR**/
+nav ul a,
+nav .brand-logo {
+  color: #26a69a;
+}
+
+.brand-logo img {
+  margin-top: 3%;
+}
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+
+/** PARALLAX **/
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+    width: 100%;
+ }
+
+
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+  color: #26a69a;
+}
+
+/** ICONES MIDIA SOCIAL **/
+.facebook{
+    background-color: #3b5998; 
+}
+.facebook:hover{
+    background-color: #4264AA; 
+}
+
+.linkedin{
+    background-color: #007bb5;
+}
+.linkedin:hover{
+    background-color: #1087C0;
+}
+.google{
+    background-color: #dd4b39;
+}
+.google:hover{
+    background-color: #E15F4F;
+}
+
+
+
+a {
+  color: #26a69a;
+}
+
+.tabs .tab a {
+  color: #26a69a;
+ 
+}
+
+.tabs .tab a:hover {
+    color: #26a69a;
+}
+
+.tabs .indicator {
+   background-color: #26a69a;
+}
+
+.card .card-content {
+  padding: 0px;
+}
+
+
+/** MEDIA **/
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: relative; /** absolute **/
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+ 
+ .modal { 
+    width: 46% ; 
+    max-height: 90% ; 
+  }
+ 
+}
+
+@media only screen and (max-width : 601px) {
+ 
+ .modal { 
+    width: 80% ; 
+    max-height: 80% ; 
+    }
+ 
+}
+@media only screen and (min-width: 601px){
+
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, li.collection-item.avatar {
+    height: 64px;
+    line-height: 64px;
+    align-content: center;
+  }
+}
+  
+footer.page-footer {
+  margin: 0;
+}

@@ -1,0 +1,72 @@
+<div id="login" materialize="modal" class="modal">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card z-depth-6">
+                <div class="card-content">
+                    
+                    <form materialize #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="input-field col s12 m12 l12 center">
+                                <a id="logo-container" href="#" class="brand-logo responsive-img"><img src="./assets/img/logo.png" alt="PlanoOn"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <i class="material-icons prefix">person</i>
+                                <input [(ngModel)]="user.email" name="email" id="email" type="email" class="validate" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                                <label for="email" data-error="Email incorreto">Email</label>
+                            </div>
+                        </div>
+                        <div *ngIf="!this.forgotLayout" class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <i class="material-icons prefix">lock</i>
+                                <input [(ngModel)]="user.password"  name="password" id="password" type="password"  required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <br>
+                            <div class="input-field">
+                                <div class="input-field ">
+                                     <a  class='col s12 m4 l4' (click)='onClickFgt()'>{{this.forgotTxt}}</a>
+                                </div>
+                                <div class="input-field col s12 m4 l4 ">
+                                </div>
+                                <button *ngIf="!this.showLoading" class="modal-action modal-close btn waves-effect waves-light col s12 m4 l4" type="submit" name="action">{{this.forgotTxtButton}}
+                                    <i class="material-icons small left">send</i>
+                                </button>          
+                                <!--LOAD ENVIO FORM-->
+                                <div class="pull-right" *ngIf="this.showLoading">
+                                    <div class="preloader-wrapper small active">
+                                        <div class="spinner-layer spinner-green-only">
+                                            <div class="circle-clipper left">
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="gap-patch">
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="circle-clipper right">
+                                                <div class="circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--LOAD-->
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <br>
+                    <div *ngIf="!this.forgotLayout" class="input-field">
+                        <a class="modal-action modal-close facebook  waves-effect  waves-light  btn col s12 m4 l4" (click)="loginFacebook()"><i class="material-icons mdi mdi-facebook-box    small left"></i>Facebook</a>
+                        <a class="modal-action modal-close linkedin  waves-effect  waves-light  btn col s12 m4 l4" (click)="loginLinkedin()"><i class="material-icons mdi mdi-linkedin-box    small left"></i>LinkedIn</a>
+                        <a class="modal-action modal-close google    waves-effect  waves-light  btn col s12 m4 l4" (click)="loginGoogle()"> <i class="material-icons mdi mdi-google-plus-box small left"></i>Google</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<!-- FORM CONTATO  -->
+<div *ngIf="this._comunication.contato" class="container">
+    <div id="formView" materialize class="section scrollspy">
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>{{titulo}}</h4>
+            </div>
+        </div>
+
+        <form materialize #contatoForm="ngForm" (ngSubmit)="onsubmit()" class="col s12">
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input class="active" [(ngModel)]="contato.nome" name="nome" id="name" type="text" required maxlength="40">
+                <label for="name">Nome</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">phone</i>
+                <input class="active validate" [(ngModel)]="contato.telefone" name="telefone" id="fone" kzMask="(999)99999-9999" placeholder="(999)99999-9999" type="tel" maxlength="15" required>
+                <label for="fone" data-error="Telefone inválido" data-success="Telefone Ok!">Fone</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">email</i>
+                <input class="active validate" [(ngModel)]="contato.email" name="email"  id="email" type="email" maxlength="60" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <label for="email" data-error="E-mail inválido!" data-success="E-mail Ok!">Email</label>
+            </div>
+
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">toc</i>
+                <input [(ngModel)]="contato.assunto" name="assunto" id="assunto" type="text" maxlength="140" required>
+                <label for="assunto">Assunto</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea [(ngModel)]="contato.mensagem" name="mensagem" id="message" class="materialize-textarea" maxlength="240" data-length="240" required></textarea>
+                <label for="message">Mensagem</label>
+            </div>
+
+            <div class="row">
+                <br>
+                <div class="col s12 m6 l6">
+                    <re-captcha (captchaResponse)="retornoCaptcha($event)" [site_key]="'6LfzxyETAAAAAGN3F-tGTknjt4VQM1IKiXqq28o7'">
+                    </re-captcha>
+                </div>
+
+                <div class="col s12 m6 l6">
+                    <br>
+                    <button [disabled]="!contatoForm.form.valid" type="submit" *ngIf="!showLoading && getCaptcha" materialize class="btn waves-effect waves-light pull-right col s12">Enviar<i class="material-icons right">send</i>
+                    </button>
+
+                    <!--LOAD ENVIO FORM-->
+                    <div class="pull-right" *ngIf="showLoading">
+                        <div class="preloader-wrapper small active">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--LOAD-->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- FORM CONTATO -->

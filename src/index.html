@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Planoon - Porque tempo é para ensinar!</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./assets/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="./assets/icons/material.css">
+  <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+
+  <!--SWEET_ALERT2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  
+  <!-- RECAPTCHA GOOGLE -->
+ <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+
+  <!-- PUSH NOTIFICATION -->
+  <link rel="manifest" href="./manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+    var OneSignal = OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "b99357e2-ace4-4386-ab00-72c748b5b5b2",
+      autoRegister: true,
+      notifyButton: {
+        enable: false
+      }
+    }]);
+  </script>
+</head>
+
+<body>
+  <app-root>
+    <p>
+      <!--ANIMAÇÂO DE LOAD-->
+      <div class="container">
+        <br>
+        <br>
+        <div class="content">
+          <div class='row center'>
+            <a id="logo-container" href="#" class="brand-logo"><img src="./assets/img/logo.png" alt="PlanoOn"></a>
+            <br />
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+      </div>
+      <!--FIM ANIMAÇÂO DE LOAD-->
+  </app-root>
+  <script type="text/javascript" src="./assets/js/utils.js"></script>
+</body>
+
+</html>

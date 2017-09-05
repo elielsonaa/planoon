@@ -1,0 +1,7 @@
+{
+  "name": "Planoon",
+  "short_name": "Planoon",
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "482941778795"
+}

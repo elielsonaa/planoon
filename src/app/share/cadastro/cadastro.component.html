@@ -1,0 +1,77 @@
+<!-- FORM CADASTRO -->
+<div *ngIf="this._comunication.cadastro" class="container">
+    <div id="formView" materialize class="section scrollspy">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>{{titulo}}</h4>
+            </div>
+        </div>
+
+        <!--TODO Colocar este form em uma component separa para utilizar e outras partes
+        como alteração dos dados do usuario-->
+        <form materialize #cadastroForm="ngForm" (ngSubmit)="onsubmit()" class="col s12">
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input class="active" [(ngModel)]="user.nomeCompleto" name="nomeCompleto" id="name" type="text" required maxlength="40">
+                <label for="name">Nome</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">email</i>
+                <input class="active validate" [(ngModel)]="user.email" name="email" id="email" type="email" maxlength="60" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <label for="email" data-error="E-mail inválido!" data-success="E-mail Ok!">Email</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">toc</i>
+                <input [(ngModel)]="user.password" name="password" id="password" type="password" maxlength="10" required>
+                <label for="password">Password</label>
+            </div>
+
+            <div class="form-group input-field col s12">
+                <i class="material-icons prefix">toc</i>
+                <input [(ngModel)]="passConfirm" name="passConfirm" id="confirPass" type="password" maxlength="10" required>
+                <label for="confirPass">Password</label>
+            </div>
+            <div class="row">
+                <br>
+                <div class="input-group">
+                    <div class="col col s12 m6 l6">
+                        <re-captcha (captchaResponse)="retornoCaptcha($event)" [site_key]="'6LfzxyETAAAAAGN3F-tGTknjt4VQM1IKiXqq28o7'">
+                        </re-captcha>
+                    </div>
+
+                    <div class="col s12 m6 l6">
+                         <br>
+                        <button type="submit" *ngIf="!showLoading && getCaptcha" class="btn waves-effect waves-light pull-right col s12" [disabled]="!cadastroForm.form.valid">Cadastrar <i class="material-icons right">send</i>
+                        </button>
+
+                        <!--LOAD ENVIO FORM-->
+                        <div class="pull-right" *ngIf="showLoading">
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--LOAD-->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- FORM CADASTRO -->
