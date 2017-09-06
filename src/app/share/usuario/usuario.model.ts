@@ -23,7 +23,6 @@ export class User {
         nome: string,
         urlImgGL: string
     };
-
     public fromLogin: string;
 
     public urlPhoto: string
